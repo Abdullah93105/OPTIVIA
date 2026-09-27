@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OPTIVIA — Premium Eyewear</title>
+
+<meta name="description"
+content="OPTIVIA — Premium eyewear collection. Shop modern frames and sunglasses online.">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+:root{
+  --navy:#071b35;
+  --navy2:#0d2b50;
+  --blue:#315d89;
+  --white:#fff;
+  --light:#f4f7fb;
+  --text:#172338;
+  --muted:#687589;
+  --border:#e1e7ef;
+  --green:#168c43;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#fff;
+  color:var(--text);
+}
+
+button,input,select{
+  font-family:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* NAVBAR */
+
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:74px;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 6%;
+  z-index:1000;
+}
+
+.logo{
+  color:var(--navy);
+  font-size:27px;
+  font-weight:900;
+  letter-spacing:4px;
+}
+
+.logo span{
+  font-weight:400;
+}
+
+.nav-links{
+  display:flex;
+  list-style:none;
+  gap:30px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+.nav-links a:hover{
+  color:var(--blue);
+}
+
+.cart-button{
+  border:0;
+  background:var(--navy);
+  color:#fff;
+  padding:11px 18px;
+  border-radius:30px;
+  font-weight:bold;
+}
+
+.cart-count{
+  background:#fff;
+  color:var(--navy);
+  padding:2px 6px;
+  border-radius:50%;
+  margin-left:5px;
+}
+
+.menu{
+  display:none;
+  font-size:27px;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  padding:135px 7% 70px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:50px;
+  background:
+    radial-gradient(circle at 85% 20%,#dceaf8,transparent 30%),
+    linear-gradient(135deg,#fff,#f0f5fa);
+}
+
+.hero-tag{
+  display:inline-block;
+  padding:8px 15px;
+  border-radius:30px;
+  background:#e6eff8;
+  color:#426687;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:1.5px;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  color:var(--navy);
+  font-size:clamp(50px,7vw,86px);
+  line-height:.96;
+  letter-spacing:-4px;
+}
+
+.hero h1 span{
+  color:#557b9f;
+}
+
+.hero p{
+  color:var(--muted);
+  max-width:550px;
+  margin:25px 0 30px;
+  font-size:17px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.primary{
+  background:var(--navy);
+  color:#fff;
+  border:0;
+  padding:15px 25px;
+  border-radius:30px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.primary:hover{
+  background:var(--navy2);
+  transform:translateY(-2px);
+}
+
+.outline{
+  background:#fff;
+  color:var(--navy);
+  border:1px solid var(--navy);
+  padding:14px 24px;
+  border-radius:30px;
+  font-weight:bold;
+}
+
+.hero-image{
+  height:500px;
+  border-radius:35px;
+  overflow:hidden;
+  background:#dce7f1;
+  box-shadow:0 30px 70px rgba(7,27,53,.18);
+}
+
+.hero-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* SECTION */
+
+section{
+  padding:95px 7%;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-title small{
+  color:#557b9f;
+  letter-spacing:2px;
+  font-weight:bold;
+}
+
+.section-title h2{
+  color:var(--navy);
+  font-size:clamp(35px,5vw,52px);
+  margin:8px 0;
+}
+
+.section-title p{
+  color:var(--muted);
+}
+
+/* CATEGORY */
+
+.categories{
+  background:var(--light);
+}
+
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.category{
+  min-height:220px;
+  border-radius:25px;
+  padding:32px;
+  color:#fff;
+  background:var(--navy);
+  transition:.3s;
+  overflow:hidden;
+  position:relative;
+}
+
+.category:nth-child(2){
+  background:#12375e;
+}
+
+.category:nth-child(3){
+  background:#285379;
+}
+
+.category:hover{
+  transform:translateY(-7px);
+}
+
+.category h3{
+  font-size:30px;
+}
+
+.category p{
+  color:#d4e0eb;
+  margin-top:8px;
+  max-width:260px;
+}
+
+.category-icon{
+  position:absolute;
+  right:20px;
+  bottom:-20px;
+  font-size:100px;
+  opacity:.12;
+}
+
+/* SHOP TOOLBAR */
+
+.shop-toolbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  margin-bottom:30px;
+  flex-wrap:wrap;
+}
+
+.search{
+  flex:1;
+  min-width:220px;
+  padding:14px 18px;
+  border:1px solid var(--border);
+  border-radius:30px;
+  outline:none;
+}
+
+.filter{
+  padding:14px 20px;
+  border:1px solid var(--border);
+  border-radius:30px;
+  background:white;
+  color:var(--text);
+}
+
+/* PRODUCTS */
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+}
+
+.product{
+  border:1px solid var(--border);
+  border-radius:22px;
+  overflow:hidden;
+  background:#fff;
+  transition:.3s;
+}
+
+.product:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 45px rgba(7,27,53,.11);
+}
+
+.product-image{
+  height:250px;
+  background:#f1f5f9;
+  position:relative;
+  overflow:hidden;
+}
+
+.product-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+
+.product:hover img{
+  transform:scale(1.06);
+}
+
+.badge{
+  position:absolute;
+  top:13px;
+  left:13px;
+  background:var(--navy);
+  color:#fff;
+  padding:7px 11px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:bold;
+}
+
+.product-info{
+  padding:19px;
+}
+
+.product-info small{
+  color:#718096;
+  letter-spacing:1px;
+}
+
+.product-info h3{
+  color:var(--navy);
+  margin:4px 0;
+}
+
+.description{
+  color:var(--muted);
+  font-size:13px;
+  min-height:40px;
+}
+
+.price-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:15px;
+}
+
+.price{
+  color:var(--navy);
+  font-size:19px;
+  font-weight:bold;
+}
+
+.add{
+  border:0;
+  background:var(--navy);
+  color:#fff;
+  padding:10px 14px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+.details{
+  display:block;
+  margin-top:10px;
+  color:#54799b;
+  font-size:13px;
+  font-weight:bold;
+}
+
+/* WHY */
+
+.why{
+  background:var(--navy);
+  color:#fff;
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+.why h2{
+  font-size:clamp(38px,5vw,58px);
+  line-height:1.05;
+  margin:10px 0 20px;
+}
+
+.why p{
+  color:#c9d6e4;
+  max-width:550px;
+}
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.feature{
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.06);
+  padding:25px;
+  border-radius:20px;
+}
+
+.feature strong{
+  display:block;
+  font-size:28px;
+}
+
+.feature span{
+  color:#b8c8d9;
+  font-size:13px;
+}
+
+/* ABOUT */
+
+.about{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:70px;
+  align-items:center;
+}
+
+.about-card{
+  min-height:300px;
+  border-radius:30px;
+  background:var(--light);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.about-logo{
+  font-size:48px;
+  font-weight:900;
+  letter-spacing:5px;
+  color:var(--navy);
+}
+
+.about-content small{
+  color:#557b9f;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+.about-content h2{
+  font-size:clamp(36px,5vw,55px);
+  line-height:1.05;
+  color:var(--navy);
+  margin:10px 0 20px;
+}
+
+.about-content p{
+  color:var(--muted);
+  margin-bottom:15px;
+}
+
+/* CART DRAWER */
+
+.cart-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  z-index:1998;
+  display:none;
+}
+
+.cart-overlay.active{
+  display:block;
+}
+
+.cart{
+  position:fixed;
+  right:-450px;
+  top:0;
+  width:420px;
+  max-width:100%;
+  height:100vh;
+  background:#fff;
+  z-index:1999;
+  transition:.35s;
+  display:flex;
+  flex-direction:column;
+  box-shadow:-15px 0 40px rgba(0,0,0,.15);
+}
+
+.cart.active{
+  right:0;
+}
+
+.cart-header{
+  padding:22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid var(--border);
+}
+
+.cart-header h2{
+  color:var(--navy);
+}
+
+.close{
+  border:0;
+  background:#eef2f6;
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  font-size:20px;
+}
+
+.cart-items{
+  flex:1;
+  overflow:auto;
+  padding:20px;
+}
+
+.cart-item{
+  display:flex;
+  gap:12px;
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+}
+
+.cart-item img{
+  width:75px;
+  height:75px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.cart-item-info{
+  flex:1;
+}
+
+.cart-item-info h4{
+  color:var(--navy);
+}
+
+.cart-item-info p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.qty{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:7px;
+}
+
+.qty button{
+  border:0;
+  background:#edf2f7;
+  width:25px;
+  height:25px;
+  border-radius:50%;
+}
+
+.remove{
+  border:0;
+  background:none;
+  color:#c0392b;
+  font-size:12px;
+}
+
+.cart-bottom{
+  padding:20px;
+  border-top:1px solid var(--border);
+}
+
+.total{
+  display:flex;
+  justify-content:space-between;
+  font-size:20px;
+  font-weight:bold;
+  color:var(--navy);
+  margin-bottom:15px;
+}
+
+.checkout-btn{
+  width:100%;
+  border:0;
+  padding:15px;
+  border-radius:30px;
+  background:var(--navy);
+  color:#fff;
+  font-weight:bold;
+  font-size:15px;
+}
+
+/* CHECKOUT */
+
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:3000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal-overlay.active{
+  display:flex;
+}
+
+.checkout{
+  width:600px;
+  max-width:100%;
+  max-height:92vh;
+  overflow:auto;
+  background:#fff;
+  border-radius:25px;
+  padding:30px;
+}
+
+.checkout-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.checkout-header h2{
+  color:var(--navy);
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+.field label{
+  color:var(--navy);
+  font-size:13px;
+  font-weight:bold;
+}
+
+.field input,
+.field textarea,
+.field select{
+  padding:13px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  outline:none;
+  width:100%;
+}
+
+.field textarea{
+  resize:vertical;
+  min-height:80px;
+}
+
+.checkout-summary{
+  background:var(--light);
+  padding:18px;
+  border-radius:15px;
+  margin:20px 0;
+}
+
+.checkout-summary div{
+  display:flex;
+  justify-content:space-between;
+  margin:6px 0;
+}
+
+.place-order{
+  width:100%;
+  border:0;
+  background:var(--green);
+  color:#fff;
+  padding:15px;
+  border-radius:30px;
+  font-weight:bold;
+  font-size:15px;
+}
+
+/* CONTACT */
+
+.contact{
+  background:var(--light);
+}
+
+.contact-box{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+  background:#fff;
+  border-radius:30px;
+  padding:50px 25px;
+  box-shadow:0 20px 60px rgba(20,40,70,.08);
+}
+
+.contact-box h2{
+  color:var(--navy);
+  font-size:40px;
+}
+
+.contact-box p{
+  color:var(--muted);
+  margin:10px 0 25px;
+}
+
+.contact-info{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:25px;
+}
+
+.contact-info span{
+  padding:12px 18px;
+  background:var(--light);
+  border-radius:25px;
+  font-weight:bold;
+  color:var(--navy);
+}
+
+/* FOOTER */
+
+footer{
+  background:#041426;
+  color:#fff;
+  padding:45px 7% 25px;
+}
+
+.footer-main{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:25px;
+  padding-bottom:25px;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.footer-logo{
+  font-size:28px;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+.footer-main p{
+  color:#9eafc1;
+  font-size:13px;
+}
+
+.footer-links{
+  display:flex;
+  gap:20px;
+  color:#c5d2df;
+  font-size:13px;
+}
+
+.copyright{
+  text-align:center;
+  color:#718499;
+  font-size:12px;
+  padding-top:20px;
+}
+
+/* FLOATING WHATSAPP */
+
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:58px;
+  height:58px;
+  background:var(--green);
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  z-index:1500;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+/* MOBILE */
+
+@media(max-width:1000px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  .navbar{
+    padding:0 5%;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero p{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .category-grid{
+    grid-template-columns:1fr;
+  }
+
+  .why-grid,
+  .about{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+
+  section{
+    padding:70px 5%;
+  }
+
+  .hero{
+    padding:120px 5% 60px;
+  }
+
+  .hero h1{
+    font-size:55px;
+  }
+
+  .hero-image{
+    height:360px;
+  }
+
+  .products{
+    grid-template-columns:1fr;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  .checkout{
+    padding:22px;
+  }
+
+  .cart{
+    width:100%;
+  }
+
+  .cart-button{
+    padding:9px 13px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+  <a href="#home" class="logo">
+    OPTI<span>VIA</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#categories">Categories</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <button class="cart-button" onclick="openCart()">
+    🛒 Cart
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
+
+  <div class="menu">☰</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div>
+
+    <span class="hero-tag">
+      PREMIUM EYEWEAR COLLECTION
+    </span>
+
+    <h1>
+      See Your<br>
+      <span>Style.</span>
+    </h1>
+
+    <p>
+      Discover stylish eyewear designed for everyday
+      comfort, confidence and modern fashion.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="#shop" class="primary">
+        Shop Collection
+      </a>
+
+      <a href="#categories" class="outline">
+        Explore Styles
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="hero-image">
+
+    <img
+      src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=1200&q=85"
+      alt="Premium eyewear">
+
+  </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section class="categories" id="categories">
+
+  <div class="section-title">
+
+    <small>EXPLORE</small>
+
+    <h2>Find Your Frame</h2>
+
+    <p>
+      Choose the style that matches your personality.
+    </p>
+
+  </div>
+
+  <div class="category-grid">
+
+    <a href="#shop" class="category">
+
+      <h3>Men</h3>
+
+      <p>
+        Modern and confident frames for everyday style.
+      </p>
+
+      <div class="category-icon">◯</div>
+
+    </a>
+
+    <a href="#shop" class="category">
+
+      <h3>Women</h3>
+
+      <p>
+        Elegant and contemporary designs.
+      </p>
+
+      <div class="category-icon">◇</div>
+
+    </a>
+
+    <a href="#shop" class="category">
+
+      <h3>Sunglasses</h3>
+
+      <p>
+        Bold styles for a statement look.
+      </p>
+
+      <div class="category-icon">◎</div>
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- SHOP -->
+
+<section id="shop">
+
+  <div class="section-title">
+
+    <small>OPTIVIA SHOP</small>
+
+    <h2>Our Collection</h2>
+
+    <p>
+      Select a frame and add it to your cart.
+    </p>
+
+  </div>
+
+
+  <div class="shop-toolbar">
+
+    <input
+      class="search"
+      id="search"
+      type="text"
+      placeholder="Search frames..."
+      oninput="renderProducts()">
+
+    <select
+      class="filter"
+      id="filter"
+      onchange="renderProducts()">
+
+      <option value="all">All Frames</option>
+      <option value="men">Men</option>
+      <option value="women">Women</option>
+      <option value="sunglasses">Sunglasses</option>
+
+    </select>
+
+  </div>
+
+
+  <div class="products" id="products"></div>
+
+</section>
+
+
+<!-- WHY OPTIVIA -->
+
+<section class="why">
+
+  <div class="why-grid">
+
+    <div>
+
+      <small>WHY OPTIVIA</small>
+
+      <h2>
+        Eyewear made for your everyday style.
+      </h2>
+
+      <p>
+        From clean classics to bold contemporary frames,
+        OPTIVIA makes discovering your next pair simple.
+      </p>
+
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature">
+        <strong>01</strong>
+        <span>Modern Designs</span>
+      </div>
+
+      <div class="feature">
+        <strong>02</strong>
+        <span>Comfort Focused</span>
+      </div>
+
+      <div class="feature">
+        <strong>03</strong>
+        <span>Easy Ordering</span>
+      </div>
+
+      <div class="feature">
+        <strong>04</strong>
+        <span>WhatsApp Support</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+  <div class="about-card">
+
+    <div class="about-logo">
+      OPTIVIA
+    </div>
+
+    <p>PREMIUM EYEWEAR</p>
+
+  </div>
+
+  <div class="about-content">
+
+    <small>ABOUT OPTIVIA</small>
+
+    <h2>
+      Your style.<br>
+      Your frame.
+    </h2>
+
+    <p>
+      OPTIVIA is an online eyewear brand concept focused
+      on making stylish frames easy to discover and order.
+    </p>
+
+    <p>
+      Browse the collection, add your favourites to the cart,
+      enter your delivery details and send your order directly
+      to OPTIVIA through WhatsApp.
+    </p>
+
+    <a href="#shop" class="primary">
+      Shop Now
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+  <div class="contact-box">
+
+    <h2>Let's Talk Eyewear.</h2>
+
+    <p>
+      Need help choosing a frame? Contact OPTIVIA.
+    </p>
+
+    <div class="contact-info">
+
+      <span>📱 9310516431</span>
+
+      <span>💬 WhatsApp Orders</span>
+
+    </div>
+
+    <a
+      href="https://wa.me/919310516431"
+      target="_blank"
+      class="primary">
+
+      Chat on WhatsApp
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- CART OVERLAY -->
+
+<div
+  class="cart-overlay"
+  id="cartOverlay"
+  onclick="closeCart()">
+</div>
+
+
+<!-- CART -->
+
+<aside class="cart" id="cart">
+
+  <div class="cart-header">
+
+    <h2>Your Cart</h2>
+
+    <button class="close" onclick="closeCart()">
+      ×
+    </button>
+
+  </div>
+
+  <div class="cart-items" id="cartItems">
+
+    <p style="color:#687589;">
+      Your cart is empty.
+    </p>
+
+  </div>
+
+  <div class="cart-bottom">
+
+    <div class="total">
+
+      <span>Total</span>
+
+      <span id="cartTotal">
+        ₹0
+      </span>
+
+    </div>
+
+    <button
+      class="checkout-btn"
+      onclick="openCheckout()">
+
+      Continue to Checkout
+
+    </button>
+
+  </div>
+
+</aside>
+
+
+<!-- CHECKOUT MODAL -->
+
+<div
+  class="modal-overlay"
+  id="checkoutModal">
+
+  <div class="checkout">
+
+    <div class="checkout-header">
+
+      <h2>Checkout</h2>
+
+      <button
+        class="close"
+        onclick="closeCheckout()">
+        ×
+      </button>
+
+    </div>
+
+
+    <form id="checkoutForm">
+
+      <div class="form-grid">
+
+        <div class="field">
+
+          <label>Full Name</label>
+
+          <input
+            id="customerName"
+            type="text"
+            placeholder="Your name"
+            required>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Phone Number</label>
+
+          <input
+            id="customerPhone"
+            type="tel"
+            placeholder="Your phone number"
+            required>
+
+        </div>
+
+
+        <div class="field full">
+
+          <label>Delivery Address</label>
+
+          <textarea
+            id="customerAddress"
+            placeholder="House / Street / Area / City / PIN"
+            required></textarea>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>City</label>
+
+          <input
+            id="customerCity"
+            type="text"
+            placeholder="Delhi"
+            required>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>PIN Code</label>
+
+          <input
+            id="customerPin"
+            type="text"
+            placeholder="110006"
+            required>
+
+        </div>
+
+
+        <div class="field full">
+
+          <label>Payment Method</label>
+
+          <select id="payment">
+
+            <option value="Cash on Delivery">
+              Cash on Delivery
+            </option>
+
+            <option value="UPI on WhatsApp">
+              UPI on WhatsApp
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <div class="checkout-summary">
+
+        <strong>Order Summary</strong>
+
+        <div>
+
+          <span>Items</span>
+
+          <span id="checkoutItems">
+            0
+  </span>
+  
